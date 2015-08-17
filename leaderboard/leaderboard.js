@@ -35,6 +35,17 @@ if (Meteor.isClient) {
     }
   });  
 
+  Template.addPlayerForm.events({
+    'submit form': function(){
+      event.preventDefault(); 
+      var playerNameVar = event.target.playerName.value;
+      PlayersList.insert({
+        name: playerNameVar, 
+        score: 0 
+      }) 
+    }
+  }); 
+
 }
 
 
