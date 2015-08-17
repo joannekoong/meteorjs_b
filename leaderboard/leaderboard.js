@@ -10,8 +10,13 @@ if (Meteor.isClient) {
     'otherHelperFunction': function() {
       return "some other function!!!"
     }
+  });
 
-  }); 
+  Template.leaderboard.events({
+    'click .player': function() {
+      console.log("you clicked something :D"); 
+    }
+  });  
 
 }
 
