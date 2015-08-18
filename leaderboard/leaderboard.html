@@ -8,7 +8,8 @@
   {{> leaderboard}}
 </body>
 
-<template name="leaderboard"> 
+<template name="leaderboard">
+	{{> loginButtons}} 
 	{{#each player}}
 		<li class="player {{selectedClass}}">{{name}}: {{score}} </li>
 		<input type="button" class="increment" value="Give 5 points"> 
@@ -27,10 +28,10 @@
 </template>
 
 <template name="addPlayerForm"> 
-	
+	{{#if currentUser}}
 	<form> 
 		<input type="text" name="playerName"> 
 		<input type="submit" value="add Player"> 
 	</form>
-
+	{{/if}}
 </template>
